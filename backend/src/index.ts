@@ -11,24 +11,24 @@ const app = express();
 app.use(express.json());
 app.use(logger("dev"));
 app.use(
-	cors({
-		origin: process.env.CORS,
-	}),
+  cors({
+    origin: process.env.CORS,
+  })
 );
-app.get("/", (req, res) => {
-	res.send("Server is running");
+app.get("/api/", (req, res) => {
+  res.send("Server is running");
 });
 
-app.use("/loby", lobyRouter);
+app.use("/api/loby", lobyRouter);
 
 const server = createServer(app);
 const io = new Server(server, {
-	cors: {
-		origin: process.env.CORS,
-	},
-	connectionStateRecovery: {
-		maxDisconnectionDuration: 5000,
-	},
+  cors: {
+    origin: process.env.CORS,
+  },
+  connectionStateRecovery: {
+    maxDisconnectionDuration: 5000,
+  },
 });
 
 socketServer(io);
@@ -36,5 +36,5 @@ socketServer(io);
 const PORT = process.env.PORT;
 
 server.listen(PORT, () => {
-	console.log(`Express server is listening at http://localhost:${PORT}`);
+  console.log(`Express server is listening at http://localhost:${PORT}`);
 });
