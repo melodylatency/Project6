@@ -1,9 +1,8 @@
 "use client";
 
 import { ToolbarHomeProps } from "@/interfaces/ToolBarProps";
-import { Input, Button, Select, SelectItem } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 import type { FC } from "react";
-import { FaSearch } from "react-icons/fa";
 
 export const ToolbarHome: FC<ToolbarHomeProps> = ({ onNewPresentation }) => {
   return (

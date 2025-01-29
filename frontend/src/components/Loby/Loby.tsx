@@ -88,8 +88,6 @@ export const Loby = () => {
     return router.push(`/presentation/${id}/${name}`);
   };
 
-  const onSortBy = (value: string) => {};
-
   const onPageChange = (page: number) => {
     //*Ask the server for the slides of the page
     setCurrentPage(page);
@@ -103,11 +101,7 @@ export const Loby = () => {
 
   return (
     <>
-      <ToolbarHome
-        onSortBy={onSortBy}
-        onNewPresentation={onNewPresentation}
-        onSearch={onSearch}
-      />
+      <ToolbarHome onNewPresentation={onNewPresentation} onSearch={onSearch} />
       <section className="w-[90%] mx-auto mt-8">
         <Gallery
           isLoading={isGalleryLoading}
