@@ -23,6 +23,7 @@ app.use("/api/loby", lobyRouter);
 
 const server = createServer(app);
 const io = new Server(server, {
+  path: "/api/socket.io/",
   cors: {
     origin: process.env.CORS,
   },
